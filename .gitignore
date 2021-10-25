@@ -1,0 +1,6 @@
+# exclude
+.DS_Store
+target/
+.vscode/
+Cargo.lock
+rust.zip
