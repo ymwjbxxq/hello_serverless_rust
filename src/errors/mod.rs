@@ -1,1 +1,1 @@
-pub mod stringError;
+pub mod string_error;

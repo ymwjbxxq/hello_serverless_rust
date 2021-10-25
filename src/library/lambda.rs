@@ -1,7 +1,7 @@
 pub mod handler {
   use crate::dtos::request::Request;
   use crate::dtos::response::Response;
-  use crate::errors::stringError::StrError;
+  use crate::errors::string_error::StrError;
   use lambda_runtime::{Context, Error};
 
   pub(crate) async fn execute(event: Request, ctx: Context) -> Result<Response, Error> {
