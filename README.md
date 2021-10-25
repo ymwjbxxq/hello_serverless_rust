@@ -5,7 +5,7 @@ When I speak about serverless, I always mention SPEED === MONEY.
 I am one of the early adopters of the Lambda function, and at that time, the support for .NET was not available, so I started working with Node.js.
 
 Nowadays, Node.js and Python dominate the market because (in my opinion) they were the only languages supported years ago.
-![picture](https://github.com/ymwjbxxq/hello_serverless_rust/blob/main/1634456840046.gif)
+![picture](https://github.com/ymwjbxxq/hello_serverless_rust/blob/main/images/1634456840046.gif)
 
 There are many blogs out there that show that Node.js and Python are among the slowest languages, and I also have compared [.NET Core vs Node.js](https://github.com/ymwjbxxq?tab=repositories&q=dotnetcore3.1-vs-nodejs&type=&language=&sort=)
 
@@ -42,7 +42,7 @@ cargo new ServerlessHelloWorld
 ```
 You will see straight away this:
 
-![picture](https://github.com/ymwjbxxq/hello_serverless_rust/blob/main/warning_after_setup.png)
+![picture](https://github.com/ymwjbxxq/hello_serverless_rust/blob/main/images/warning_after_setup.png)
 
 Open the Cargo.toml file and change the value for name into serverless_hello_world.
 
@@ -80,7 +80,7 @@ As my first day I hit my head on this and it took me a couple of coffes to grasp
 
 The structure of this Lambda function is:
 
-![picture](https://github.com/ymwjbxxq/hello_serverless_rust/blob/main/lambda-structure.png)
+![picture](https://github.com/ymwjbxxq/hello_serverless_rust/blob/main/images/lambda-structure.png)
 
 As you can see I have create a file call mod.rs in the dtos/ folder. In Rust you must explicitly build the module tree. This file contains the declaration of my struct
 ```
