@@ -1,11 +1,11 @@
-use lambda_runtime::{handler_fn, Context, Error};
+use lambda_runtime::{handler_fn, Error};
 use log::LevelFilter;
 use simple_logger::SimpleLogger;
 
+mod library;
 mod dtos;
-use dtos::request::Request;
-use dtos::response::Response;
-
+mod errors;
+use library::lambda::handler::execute;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -15,19 +15,7 @@ async fn main() -> Result<(), Error> {
     .init()
     .unwrap();
 
-  let func = handler_fn(my_handler);
+  let func = handler_fn(execute);
   lambda_runtime::run(func).await?;
   Ok(())
-}
-
-pub(crate) async fn my_handler(event: Request, ctx: Context) -> Result<Response, Error> {
-  log::info!("input {:?}", event);
-  let name = event.name;
-
-  let resp = Response {
-    req_id: ctx.request_id,
-    msg: format!("Hello {}!", name),
-  };
-
-  Ok(resp)
 }
